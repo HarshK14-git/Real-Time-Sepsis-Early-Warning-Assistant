@@ -1,0 +1,772 @@
+/* =======================================================
+   ROOT VARIABLES
+======================================================= */
+
+:root {
+
+    --primary: #0f6fff;
+    --primary-dark: #0057d9;
+
+    --secondary: #0ea5e9;
+
+    --success: #059669;
+    --warning: #d97706;
+    --orange: #ea580c;
+    --danger: #dc2626;
+    --shock: #7f1d1d;
+
+    --bg: #f4f8fc;
+    --card: rgba(255,255,255,0.75);
+
+    --border: rgba(255,255,255,0.4);
+
+    --text: #1e293b;
+    --muted: #64748b;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --radius: 18px;
+}
+
+/* =======================================================
+   GLOBAL
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #f8fbff
+        );
+
+    color:var(--text);
+
+    min-height:100vh;
+}
+
+a{
+    text-decoration:none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:700;
+}
+
+.section-title{
+    margin-bottom:20px;
+}
+
+/* =======================================================
+   LOADER
+======================================================= */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:white;
+
+    z-index:9999;
+}
+
+/* =======================================================
+   APP LAYOUT
+======================================================= */
+
+.app-wrapper{
+
+    display:flex;
+    min-height:100vh;
+}
+
+/* =======================================================
+   SIDEBAR
+======================================================= */
+
+.sidebar{
+
+    width:280px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0f6fff,
+            #0b57d0
+        );
+
+    color:white;
+
+    padding:30px 20px;
+
+    position:sticky;
+    top:0;
+
+    height:100vh;
+
+    box-shadow:
+        5px 0 25px rgba(0,0,0,.08);
+}
+
+.sidebar-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:40px;
+}
+
+.logo-circle{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+.sidebar-menu{
+
+    list-style:none;
+    padding-left:0;
+}
+
+.sidebar-menu li{
+    margin-bottom:12px;
+}
+
+.menu-link{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.menu-link:hover{
+
+    background:
+        rgba(255,255,255,.12);
+
+    transform:
+        translateX(4px);
+}
+
+.menu-link.active{
+
+    background:
+        rgba(255,255,255,.18);
+}
+
+/* =======================================================
+   CONTENT
+======================================================= */
+
+.content{
+
+    flex:1;
+
+    padding:30px;
+}
+
+/* =======================================================
+   GLASS CARD
+======================================================= */
+
+.glass-card{
+
+    background:var(--card);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    padding:24px;
+}
+
+/* =======================================================
+   TOP BAR
+======================================================= */
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.topbar p{
+    color:var(--muted);
+}
+
+.topbar-actions{
+
+    display:flex;
+    gap:12px;
+}
+
+/* =======================================================
+   KPI METRIC CARDS
+======================================================= */
+
+.metric-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.metric-card:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.12);
+}
+
+.metric-card h6{
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.metric-card h2{
+
+    font-size:34px;
+
+    margin-top:8px;
+
+    color:var(--primary);
+}
+
+/* =======================================================
+   FORM
+======================================================= */
+
+form label{
+
+    font-weight:600;
+
+    margin-bottom:6px;
+}
+
+.form-control,
+.form-select{
+
+    border-radius:12px;
+
+    min-height:50px;
+
+    border:
+        1px solid #dbe6f2;
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 0.2rem
+        rgba(15,111,255,.15);
+}
+
+.card-header-custom{
+
+    margin-bottom:25px;
+}
+
+/* =======================================================
+   SEVERITY CARD
+======================================================= */
+
+.severity-card{
+
+    min-height:220px;
+
+    border-radius:20px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.15);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f6fff,
+            #0057d9
+        );
+}
+
+.severity-card h4{
+
+    font-size:30px;
+}
+
+#severityIcon{
+
+    font-size:50px;
+
+    margin-top:15px;
+}
+
+/* =======================================================
+   SCORE CARDS
+======================================================= */
+
+.score-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+}
+
+.score-card h2{
+
+    font-size:40px;
+
+    margin-top:10px;
+
+    color:var(--primary);
+}
+
+/* =======================================================
+   AI PANEL
+======================================================= */
+
+#aiGuidanceContainer{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.ai-card{
+
+    background:#f8fbff;
+
+    border-left:
+        5px solid var(--primary);
+
+    padding:18px;
+
+    border-radius:12px;
+}
+
+/* =======================================================
+   ALERTS
+======================================================= */
+
+.alert-item{
+
+    border-radius:16px;
+
+    padding:16px;
+
+    margin-bottom:12px;
+
+    background:white;
+
+    border-left:
+        5px solid #e2e8f0;
+}
+
+.alert-critical{
+    border-left-color:#dc2626;
+}
+
+.alert-high{
+    border-left-color:#ea580c;
+}
+
+.alert-medium{
+    border-left-color:#d97706;
+}
+
+.alert-low{
+    border-left-color:#059669;
+}
+
+.alert-title{
+
+    font-weight:700;
+}
+
+.alert-note{
+
+    color:var(--muted);
+}
+
+/* =======================================================
+   TABLES
+======================================================= */
+
+.table{
+
+    margin-top:15px;
+}
+
+.table thead{
+
+    background:#eef5ff;
+}
+
+.table thead th{
+
+    border:none;
+
+    color:#334155;
+}
+
+.table tbody tr{
+
+    transition:.2s;
+}
+
+.table tbody tr:hover{
+
+    background:#f8fbff;
+}
+
+.table-toolbar{
+
+    display:flex;
+    justify-content:flex-end;
+}
+
+#patientSearch{
+
+    width:350px;
+}
+
+/* =======================================================
+   SEVERITY BADGES
+======================================================= */
+
+.badge-severity{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.badge-no-risk{
+
+    background:#ecfdf5;
+    color:#059669;
+}
+
+.badge-watch{
+
+    background:#fff7ed;
+    color:#d97706;
+}
+
+.badge-alert{
+
+    background:#fff7ed;
+    color:#ea580c;
+}
+
+.badge-severe{
+
+    background:#fef2f2;
+    color:#dc2626;
+}
+
+.badge-shock{
+
+    background:#7f1d1d;
+    color:white;
+}
+
+/* =======================================================
+   CHARTS
+======================================================= */
+
+canvas{
+
+    width:100% !important;
+    max-width:100%;
+
+    margin-top:15px;
+}
+
+.chart-wrapper{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.05);
+}
+
+/* =======================================================
+   MODAL
+======================================================= */
+
+.modal-content{
+
+    border:none;
+
+    border-radius:22px;
+}
+
+.modal-header{
+
+    background:#f5f9ff;
+}
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+.btn{
+
+    border-radius:12px;
+}
+
+.btn-primary{
+
+    background:var(--primary);
+    border:none;
+}
+
+.btn-primary:hover{
+
+    background:
+        var(--primary-dark);
+}
+
+.btn-success{
+
+    border:none;
+}
+
+.btn-danger{
+
+    border:none;
+}
+
+/* =======================================================
+   SCROLLBAR
+======================================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#edf2f7;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b6c4d8;
+
+    border-radius:20px;
+}
+
+/* =======================================================
+   ANIMATIONS
+======================================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.glass-card,
+.metric-card,
+.score-card{
+
+    animation:
+        fadeUp .5s ease;
+}
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media(max-width:1200px){
+
+    .sidebar{
+        width:230px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .app-wrapper{
+
+        flex-direction:column;
+    }
+
+    .sidebar{
+
+        width:100%;
+        height:auto;
+
+        position:relative;
+    }
+
+    .sidebar-menu{
+
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .topbar{
+
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:768px){
+
+    #patientSearch{
+        width:100%;
+    }
+
+    .metric-card h2{
+        font-size:28px;
+    }
+
+    .severity-card{
+        min-height:180px;
+    }
+
+    .severity-card h4{
+        font-size:22px;
+    }
+}
+
+@media(max-width:576px){
+
+    .content{
+        padding:15px;
+    }
+
+    .glass-card{
+        padding:18px;
+    }
+
+    .topbar h2{
+        font-size:22px;
+    }
+
+    .metric-card{
+        padding:16px;
+    }
+
+    .score-card h2{
+        font-size:30px;
+    }
+}
